@@ -1,5 +1,7 @@
-# f26-team18
-Team 18's repository for the CSC340-01 term project.
+## Title
+> Your project title
 
-Members:
-Christopher Davis
+## Team Members
+> Team Member #1 Christopher Davis
+
+> Team Member #2 Shaun Sampson
