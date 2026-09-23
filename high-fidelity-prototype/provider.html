@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<!--- BEGINNING OF HTML FOR HOMEPAGE -->
+<html>
+
+<!-- HEADER -->
+ <header class="site-header">
+<!-- LEFT: BUTTONS -->
+<div class="header-left">
+  <a href="homepage.html"> <button>Home</button></a>
+  <button class="header-button">About</button>
+  <button class="header-button">Services</button>
+  <button class="header-button">Help</button>
+  <a href="provider.html"> <button>Provider</button></a>
+
+</div>
+<!-- CENTER: LOGO AND RETURN TO HOMEPAGE -->
+<div class="header-center">
+  <a href="homepage.html"><img src="https://i.imgur.com/NFH2TyE.png" alt="PetPal Header Logo" class="logo"></a>
+</div>
+<!-- RIGHT: LOGIN AND REGISTER -->
+<div class="header-right">
+  <button class="header-button">Login</button>
+  <button class="header-button">Register</button>
+</div>
+
+ </header>
+<!-- END OF HEADER -->
+
+<!-- BODY -->
+<body>
+    <div class="container">
+
+      <main class="profile-body">
+  
+  <!-- LEFT SIDE: PERSONAL DETAILS -->
+  <aside class="profile-sidebar">
+    <img src="https://i.imgur.com/WQewwZe.png" alt="Provider Picture" class="profile-img">
+    
+    <div class="personal-details">
+      <h3>John Doe</h3>
+      <ul>
+        <li><strong>Role:</strong> Dog Walker, Groomer </li>
+        <li><strong>Location:</strong> Greensboro, NC </li>
+        <li><strong>Animal Experience:</strong> 8+ Years</li>
+        <li><strong>Email:</strong> jdoe43110@email.com</li>
+      </ul>
+    </div>
+
+    <a href="#schedule-section" class="schedule-btn">Schedule Appointment</a>
+    <section id="schedule-section" class="profile-content">
+      <h2>Schedule Appointment</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" name="date" required>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <p><strong>Provider Actions</strong></p>
+<div class="provider-actions">
+      <button type="button" class="action-btn" id="avail-btn">Change Availability</button>
+      <button type="button" class="action-btn" id="price-btn">Adjust Prices</button>
+<script>
+  
+  // Handle "Change Availability" button
+  document.getElementById('avail-btn').addEventListener('click', function() {
+    let days = prompt("Enter your available days (e.g., Monday - Friday):");
+    if (days) {
+      alert("Availability successfully updated to: " + days);
+    }
+  });
+
+  // Handle "Adjust Prices" button
+  document.getElementById('price-btn').addEventListener('click', function() {
+    let price = prompt("Enter new base rate price per service (e.g., $30/walk):");
+    if (price) {
+      alert("Base price successfully updated to: " + price);
+    }
+  });
+</script>
+
+    </div>
+
+  </aside>
+
+  <!-- Right Side: DESCRIPTIONS -->
+  <section class="profile-content">
+    <h2>About Me</h2>
+    <p>
+    <p>Hello! I’m John Doe, the friendly face and steady hands behind John’s Paws & Claws. Ever since I rescued my first golden retriever over a decade ago, my life has been dedicated to the happiness and well-being of dogs. I believe that every pup has a unique personality, and I take pride in building a genuine bond with each animal in my care.
+
+Whether your dog needs an energetic midday trek to burn off some steam or a gentle, stress-free grooming session to keep their coat looking and feeling its best, I treat every pet as if they were my own family. My goal is to give owners complete peace of mind knowing their furry best friends are safe, happy, and pampered.</p>
+    
+    <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+
+    <h2>Specialties & Skills</h2>
+    <p>Breed-Standard & Custom Grooming: Experienced with everything from standard puppy trims and de-shedding treatments to breed-specific styling, gentle baths, nail trimming, and ear cleaning.
+
+       Anxious & Senior Dog Care: Specially trained in handling rescue dogs, nervous pups, and senior dogs with patience, positive reinforcement, and a calm demeanor.
+
+       Positive Reinforcement Walking: Leash training techniques that encourage good manners, safe neighborhood navigation, and structured, engaging exercise.
+
+       Pet First Aid & CPR: Certified in canine first aid and CPR so your pets are always in safe, prepared hands.
+
+       Flexible Care: Comfortable administering basic oral medications and accommodating special dietary needs or routines.
+</p>
+    
+    <h2>Professional History</h2>
+    <p>My journey in professional pet care began in 2016, when I started volunteering at a local animal shelter, helping rehabilitate rescues and getting them ready for adoption. That hands-on experience taught me how to read canine body language and build trust with animals overcoming fear or trauma.
+
+      In 2019, I completed a professional pet grooming certification program and began working at a busy, top-rated local salon. Over the years, I noticed how much happier dogs were when groomed and walked in a more personalized, one-on-one environment rather than a high-stress facility. That inspired me to launch my independent practice, where I’ve spent the last several years providing dedicated, individualized care to wonderful dogs and their families across the community.</p>
+  </section>
+
+</main>
+
+<section class="profile-reviews">
+    <h2>Reviews</h2>
+    <div class="review-card">
+      <div class="review-header">
+        <strong>Sarah M.</strong>
+        <span class="stars">★★★★★</span>
+      </div>
+      <p class="review-text">"John has been walking and grooming my golden retriever for six months now, and he is absolute perfection! My pup gets so excited every time John pulls up. Highly professional, reliable, and truly cares about animals."</p>
+      <span class="review-date">Reviewed 2 weeks ago</span>
+    </div>
+  </section>
+
+        
+    </div>
+
+</body>
+<!-- END OF BODY -->
+
+
+
+
+<!-- SET BACKGROUDN COLOR -->
+<style>
+    body {
+        background-color: #C2E5D3;
+        margin: 0;
+    }
+</style>
+
+<!-- LINK TO CSS -->
+<link rel="stylesheet" href="style.css">
+</html>

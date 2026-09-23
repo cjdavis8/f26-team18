@@ -147,3 +147,126 @@ body, html {
   object-fit: cover;
   border-radius: 4px;
 }
+
+
+/* END OF STYLING FOR SERVICES AD SECTION */
+
+/* PROVIDER.HTML STYLING */
+/* Container layout using CSS Grid for the 1fr (1/4) and 3fr (3/4) split */
+.profile-body {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Left Sidebar Styling */
+.profile-sidebar {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+  text-align: center;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.personal-details {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.personal-details h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 5px;
+}
+
+.personal-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Right Main Content Block Styling */
+.profile-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+}
+
+.profile-content h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.4rem;
+}
+
+/* Optional: Make it stack nicely on smaller mobile screens */
+@media (max-width: 768px) {
+  .profile-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Reviews Section Styling */
+.profile-reviews {
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  padding: 0 20px;
+}
+
+.profile-reviews h2 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.review-card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.stars {
+  color: #f59f00; /* Warm star rating gold */
+  letter-spacing: 2px;
+}
+
+.review-text {
+  color: #495057;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.review-date {
+  font-size: 0.85rem;
+  color: #868e96;
+}
+
+/* END OF PROVIDER.HTML STYLING */
