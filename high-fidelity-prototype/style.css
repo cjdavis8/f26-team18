@@ -13,6 +13,7 @@
   box-sizing: border-box;
 }
 
+
 .header-left, 
 .header-center, 
 .header-right {
@@ -51,18 +52,28 @@
 /* END OF STYLING FOR LOGO IMAGE */
 
 /* CENTRAL BODY STYLING - CREATES A GREEN SIDES AND WHITE CENTER */
-body, html {
-  margin: 0;
+body{
+  background-color: #C1E1C1;
   padding: 0;
   height: 100%;
 }
 
+/* form-group styling */
+.form-group {
+  margin-bottom:.5rem;
+  input{
+    margin-bottom:.5rem;
+  }
+}
+
 /* Outer Container (White Box) */
 .container {
-  background-color: #ffffff;
+  background-color: #fbfbfb;
   padding: 40px;
   max-width: 800px;
-  margin: 0 auto;
+  h3{
+    font-weight: 700; margin-top: 1.5rem; margin-bottom: 1rem; margin-top: 1rem;
+  }
 }
 /* END OF CENTRAL BODY STYLING - CREATES A GREEN SIDES AND WHITE CENTER*/
 
@@ -237,6 +248,7 @@ body, html {
   margin-bottom: 20px;
 }
 
+
 .review-card {
   background-color: #ffffff;
   padding: 25px;
@@ -267,6 +279,48 @@ body, html {
 .review-date {
   font-size: 0.85rem;
   color: #868e96;
+}
+
+.card-content {
+  margin: 2rem;
+}
+
+
+/* styling for pets block */
+.pets-container {
+  display: flex;
+  flex-direction: row; /* Arranges children horizontally */
+  gap: 20px;           /* Space between each ad block */
+  margin-bottom:2rem;
+}
+
+/* 2. Styles for each individual ad block */
+.pets-block {
+  flex: 1;              /* Allows blocks to take up equal width */
+  max-width: 20rem;
+  max-height: 20rem;
+  background-color: #f0f0f0;
+  padding: 5px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  img{
+    width:200px;
+    height:200px;
+    border-radius: 4px;
+  }
+  
+}
+.pets-block:hover {
+  transform: translateY(-5px); /* Slightly lifts the block on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  }
+  
+a.pets-block {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
 }
 
 /* END OF PROVIDER.HTML STYLING */

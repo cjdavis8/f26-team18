@@ -1,0 +1,116 @@
+<!-- HEADER -->
+ <header class="site-header">
+    <title>PetPal - User Profile</title>
+<!-- LEFT: BUTTONS -->
+<div class="header-left">
+  <a href="../homepage.html"> <button>Home</button></a>
+  <button class="header-button">About</button>
+  <button class="header-button">Services</button>
+  <button class="header-button">Help</button>
+  <a href="provider.html"> <button>Provider</button></a>
+
+</div>
+<!-- CENTER: LOGO AND RETURN TO HOMEPAGE -->
+<div class="header-center">
+  <a href="../homepage.html"><img src="https://i.imgur.com/NFH2TyE.png" alt="PetPal Header Logo" class="logo"></a>
+</div>
+<!-- RIGHT: Customer Dashboard -->
+<div class="header-right">
+  <a href="profile.html"><button class="header-button">My Profile</button></a>
+  <a href = "../homepage.html"><button class="header-button">Log Out</button></a>
+</div>
+
+ </header>
+<!-- END OF HEADER -->
+<body style="background-color: #cfe8cf">
+  <div class="container">
+    <!-- Navigation -->
+    <nav>
+      <div class="navbar">
+        <a href="../index.html" class="navbar-brand"> <img src="../images/user-blank.jpg" width="120" height="120"></a>
+
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="section" style="background: var(--light-gray);">
+      <div class="container">
+        <h1 style="font-size: 2rem; font-weight: 700;">Corina's Profile</h1>
+        <p class="text-muted">View and update your personal information and pets.</p>
+      </div>
+    </section>
+
+    <!-- Profile Content -->
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+
+        <!-- Personal Info Card -->
+        <div class="card" style="margin-bottom: 2rem;">
+          <div class="card-header">
+            <h2 style="margin: 1; font-size: 1.3rem; font-weight: 700;">Personal Information</h2>
+          </div>
+          <div class="card-content" style="margin:2rem">
+            <div class="grid grid-2">
+              <div>
+                <p class="text-muted" style="margin-bottom: 0.25rem;">First Name</p>
+                <p style="font-weight: 600;">Corina</p>
+              </div>
+              <div>
+                <p class="text-muted" style="margin-bottom: 0.25rem;">Last Name</p>
+                <p style="font-weight: 600;">PB</p>
+              </div>
+              <div>
+                <p class="text-muted" style="margin-bottom: 0.25rem;">Email</p>
+                <p style="font-weight: 600;">corina@example.com</p>
+              </div>
+
+            </div>
+            <button class="btn btn-success" style="margin-top: 1rem;" onclick="window.location.href='edit-profile.html'">Edit Personal Info</button>
+          </div>
+        </div>
+
+        <!-- Pets Card -->
+        <div class="card" style="margin-bottom: 2rem;">
+          <div class="card-header">
+            <h2 style="margin: 0; font-size: 1.3rem; font-weight: 700;">Corina's Pets</h2>
+          </div>
+          <div class="card-content">
+            <div class="form-group">
+
+                <div class = "pets-container" href = "profile.html">
+                    <div class="pets-block" onclick="location.href='pet-profile.html';" style="cursor: pointer;">
+                        <h3>Tachanka</h3>
+                        <img src="../images/tachanka.jpg" alt="Tachanka" class="pet-image" style="margin-bottom:.5rem"><br>
+                    </div>
+                    <div class="pets-block"  onclick="location.href='pet-profile.html';" style="cursor: pointer;">
+                        <h3>Threadcount 900</h3>
+                        <img src="../images/tachanka.jpg" alt="Tachanka" class="pet-image" style="margin-bottom:.5rem"><br>
+                    </div>
+                    
+                    </div>
+                </div>
+          </div>
+        </div>
+
+        <!-- Account Settings Card -->
+        <div class="card" style="margin-bottom: 2rem;">
+          <div class="card-header">
+            <h2 style="margin: 0; font-size: 1.3rem; font-weight: 700;">Account Settings</h2>
+          </div>
+          <div class="card-content">
+            <button class="btn btn-danger" onclick="alert('Delete account - account will be deleted')" style="width: 100%; text-align: left; padding: 0.75rem 1rem; color: white; border-color: var(--danger-color);">Delete
+              Account</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+
+</body>
+  <!-- LINK TO CSS -->
+<link rel="stylesheet" href="../style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</html>
