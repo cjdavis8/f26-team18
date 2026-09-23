@@ -52,7 +52,7 @@
 /* END OF STYLING FOR LOGO IMAGE */
 
 /* CENTRAL BODY STYLING - CREATES A GREEN SIDES AND WHITE CENTER */
-body{
+body {
   background-color: #C1E1C1;
   padding: 0;
   height: 100%;
@@ -248,7 +248,6 @@ body{
   margin-bottom: 20px;
 }
 
-
 .review-card {
   background-color: #ffffff;
   padding: 25px;
@@ -281,10 +280,7 @@ body{
   color: #868e96;
 }
 
-.card-content {
-  margin: 2rem;
-}
-
+/* END OF PROVIDER.HTML STYLING */
 
 /* styling for pets block */
 .pets-container {
@@ -294,7 +290,6 @@ body{
   margin-bottom:2rem;
 }
 
-/* 2. Styles for each individual ad block */
 .pets-block {
   flex: 1;              /* Allows blocks to take up equal width */
   max-width: 20rem;
@@ -328,5 +323,3 @@ a.pets-block {
     font-size:22;
   }
 }
-
-/* END OF PROVIDER.HTML STYLING */
