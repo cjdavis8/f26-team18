@@ -1,0 +1,78 @@
+<!-- HEADER -->
+ <header class="site-header">
+    <title>PetPal - User Profile</title>
+<!-- LEFT: BUTTONS -->
+<div class="header-left">
+  <a href="../homepage.html"> <button>Home</button></a>
+  <button class="header-button">About</button>
+  <button class="header-button">Services</button>
+  <button class="header-button">Help</button>
+  <a href="provider.html"> <button>Provider</button></a>
+
+</div>
+<!-- CENTER: LOGO AND RETURN TO HOMEPAGE -->
+<div class="header-center">
+  <a href="../homepage.html"><img src="https://i.imgur.com/NFH2TyE.png" alt="PetPal Header Logo" class="logo"></a>
+</div>
+<!-- RIGHT: Customer Dashboard -->
+<div class="header-right">
+  <a href="profile.html"><button class="header-button">My Profile</button></a>
+  <a href = "../homepage.html"><button class="header-button">Log Out</button></a>
+</div>
+
+ </header>
+<!-- END OF HEADER -->
+<body style="background-color: #cfe8cf">
+
+
+    <!-- Profile Content -->
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+
+        <!-- Personal Info Card -->
+        <div class="pet-card" style="margin-bottom: 2rem;">
+          <div class="card-header">
+            <h2 style="margin: 1; font-size: 2.3rem; font-weight: 700; text-align:center;">Tachanka</h2>
+          </div>
+          
+          <div class="card-content" style="margin:2rem">
+            <div class="row">
+              <div class = "col-sm">
+                <div class="pet-portrait">
+                <img src="../images/tachanka.jpg" style="width: 300px; height:fit-content; align-self: center;"></img>
+                </div>
+              </div>
+              <div class = "col-sm">
+                <div>
+                <p class="text-muted" style="margin-bottom: 0.25rem;">Breed</p>
+                <p style="font-weight: 600;">Newfoundland</p>
+                </div>
+                <div>
+                  <p class="text-muted" style="margin-bottom: 0.25rem;">Weight</p>
+                  <p style="font-weight: 600;">150 lbs</p>
+                </div>
+                <div>
+                  <p class="text-muted" style="margin-bottom: 0.25rem;">Age</p>
+                  <p style="font-weight: 600;">7</p>
+                </div>
+              </div>
+
+            </div>
+            <button class="btn btn-success" style="width: 100%; margin-top: 1rem; text-align: center; padding: 0.75rem 1rem;" onclick="window.location.href='edit-pet.html'">Edit Pet Info</button>
+            <button class="btn btn-danger" onclick="alert('Delete pet - pet will be deleted')" style="width: 100%; margin-top: 1rem; text-align: center; padding: 0.75rem 1rem; color: white; border-color: var(--danger-color);">Delete
+              Pet</button>
+          </div>
+        </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+
+</body>
+  <!-- LINK TO CSS -->
+<link rel="stylesheet" href="../style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</html>

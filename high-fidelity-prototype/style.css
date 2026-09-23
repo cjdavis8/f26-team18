@@ -323,4 +323,10 @@ a.pets-block {
     text-decoration: none;
 }
 
+.pet-card{
+  p{
+    font-size:22;
+  }
+}
+
 /* END OF PROVIDER.HTML STYLING */
