@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html>
+
+<!-- HEADER -->
+ <header class="site-header">
+    <title>PetPal - User Profile</title>
+<!-- LEFT: BUTTONS -->
+<div class="header-left">
+  <a href="../homepage.html"> <button>Home</button></a>
+  <button class="header-button">About</button>
+  <button class="header-button">Services</button>
+  <button class="header-button">Help</button>
+
+</div>
+<!-- CENTER: LOGO AND RETURN TO HOMEPAGE -->
+<div class="header-center">
+  <a href="../homepage.html"><img src="https://i.imgur.com/NFH2TyE.png" alt="PetPal Header Logo" class="logo"></a>
+</div>
+<!-- RIGHT: Customer Dashboard -->
+<div class="header-right"> 
+    <a href = "browse-providers.html"><button class="header-button">Browse Providers</button></a>
+    <a href = "dashboard.html"><button class="header-button">Dashboard</button></a>
+    <a href="profile.html"><button class="header-button">My Profile</button></a>
+    <a href = "../homepage.html"><button class="header-button">Log Out</button></a>
+  
+</div>
+
+ </header>
+<!-- END OF HEADER -->
+
+<!-- BEGINNING OF BODY -->
+<body style="background-color:#cfe8cf">
+    <div class="container" >
+
+        <!-- BEGINNING OF AD TO LOGIN OR REGISTER -->
+        <div class = "black-box">
+            <h2> Welcome, Corina!</h2>
+        <!-- END OF AD TO LOGIN OR RESGISTER-->
+        </div>
+
+        <p style="font-size: xx-large; text-align: center; font-weight: bold;">Find Services</p>
+
+
+        <!-- BEGINNING OF AD BLOCKS-->
+        <div class = "ad-container">
+        <div class="ad-block" onclick="location.href='browse-providers.html'">
+            <img src="https://i.imgur.com/BL3Dilp.png" alt="Petpal Walking Ad" class="ad-image-1" ;>
+            <h3>Walking</h3>
+            <p> Want your animal walked on certain days? Find the right person!</p>
+        </div>
+
+        <div class="ad-block" onclick="location.href='browse-providers.html'">
+            <img src="https://i.imgur.com/r3zpJkH.png" alt="Petpal Grooming Ad" class="ad-image-2" >
+            <h3>Grooming</h3>
+            <p> Keep your pet looking their best with our professional grooming services!</p>
+        </div>
+
+        <div class="ad-block" onclick="location.href='browse-providers.html'">
+            <img src="https://i.imgur.com/npqK2tT.png" alt="Petpal Training Ad" class="ad-image-2" >
+            <h3>Training</h3>
+            <p> Help your pet learn new tricks and behaviors with our professional training services!</p>
+        </div>
+        </div>
+        <!-- END OF AD BLOCKS -->
+         <div class="container" >
+            <section class="section">
+                <div class="container">
+                    <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem;">Upcoming Bookings</h2>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="booking-item">
+                                <div class="session-header">
+                                    <div>
+                                    <div class="booking-provider"><b>Provider</b> Cami</div>
+                                    <div class="booking-service"><b>Service</b> Walk</div>
+                                    <div class="booking-pet"><b>Pet</b> <a href="pet-profile.html">Tachanka</a></div>
+                                    </div>
+                                </div>
+                                <div class="session-details">
+                                    <div class="detail-item"><span class="detail-label"><b>Start Date &amp; Time:</span></b> Friday, October 2nd • 8:00 PM</div>
+                                    <div class="detail-item"><span class="detail-label"><b>End Date &amp; Time:</span></b> Friday, October 2nd • 10:00 PM</div>
+                                    <div class="detail-item"><span class="detail-label"><b>Price</b></span> $40</div>
+                                </div>
+                                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                    <button class="btn btn-success" onclick="window.location.href='session-details.html'">View Details</button>
+                                    <button class="btn btn-light" onclick="alert('Rescheduled')">Reschedule</button>
+                                    <button class="btn btn-danger" onclick="alert('Session cancelled')" style="color: white; border-color: var(--danger-color);">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                                <div class="booking-item">
+                                    <div class="session-header">
+                                        <div>
+                                        <div class="booking-provider"><b>Provider</b> Cat T.</div>
+                                        <div class="booking-service"><b>Service</b> Pet Sitting</div>
+                                        <div class="booking-pet"><b>Pet</b> <a href="pet-profile.html">Threadcount 900</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="session-details">
+                                        <div class="detail-item"><span class="detail-label"><b>Start Date &amp; Time:</span></b> Wednesday, October 7th • 5:00 PM</div>
+                                        <div class="detail-item"><span class="detail-label"><b>End Date &amp; Time:</span></b> Monday, October 12th • 11:00 AM</div>
+                                        <div class="detail-item"><span class="detail-label"><b>Price</b></span> $240</div>
+                                    </div>
+                                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                        <button class="btn btn-success" onclick="window.location.href='session-details.html'">View Details</button>
+                                        <button class="btn btn-light" onclick="alert('Rescheduled')">Reschedule</button>
+                                        <button class="btn btn-danger" onclick="alert('Session cancelled')" style="color: white; border-color: var(--danger-color);">Cancel</button>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem;">Recent Bookings</h2>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="booking-item">
+                                <div class="session-header">
+                                    <div>
+                                    <div class="booking-provider"><b>Provider</b> Cami</div>
+                                    <div class="booking-service"><b>Service</b> Walk</div>
+                                    <div class="booking-pet"><b>Pet</b> <a href="pet-profile.html">Tachanka</a></div>
+                                    </div>
+                                </div>
+                                <div class="session-details">
+                                    <div class="detail-item"><span class="detail-label"><b>Start Date &amp; Time:</span></b> Thursday, October 1st • 8:00 PM</div>
+                                    <div class="detail-item"><span class="detail-label"><b>End Date &amp; Time:</span></b> Thursday, October 1st • 10:00 PM</div>
+                                    <div class="detail-item"><span class="detail-label"><b>Price</b></span> $40</div>
+                                </div>
+                                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                    <button class="btn btn-success" onclick="window.location.href='session-details.html'">View Details</button>
+                                    <button class="btn btn-light" onclick="window.location.href='booking-review.html'">Leave a Review</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                                <div class="booking-item">
+                                    <div class="session-header">
+                                        <div>
+                                        <div class="booking-provider"><b>Provider</b> Cat T.</div>
+                                        <div class="booking-service"><b>Service</b> Walk</div>
+                                        <div class="booking-pet"><b>Pet</b> <a href="pet-profile.html">Tachanka</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="session-details">
+                                        <div class="detail-item"><span class="detail-label"><b>Start Date &amp; Time:</span></b> Wednesday, September 30th • 8:00 PM</div>
+                                        <div class="detail-item"><span class="detail-label"><b>End Date &amp; Time:</span></b> Wednesday, September 30th • 10:00 PM</div>
+                                        <div class="detail-item"><span class="detail-label"><b>Price</b></span> $40</div>
+                                    </div>
+                                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                        <button class="btn btn-success" onclick="window.location.href='booking-details.html'">View Details</button>
+                                        <button class="btn btn-light" onclick="window.location.href='booking-review.html'">Leave a Review</button>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+         </div>
+
+
+
+
+</body>
+<!-- END OF BODY -->
+
+<!-- SET BACKGROUDN COLOR -->
+<style>
+    body {
+        background-color: #C2E5D3;
+        margin: 0;
+    }
+</style>
+
+<!-- LINK TO CSS -->
+<link rel="stylesheet" href="../style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</html>
