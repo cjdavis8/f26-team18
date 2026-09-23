@@ -27,37 +27,40 @@
 
     <section class="section" style="background: #4c824c; padding:1rem; margin:2rem;">
       <div class="container">
-        <h1 style="font-size: 2rem; font-weight: 700;">Edit Personal Information</h1>
-        <p class="text-muted">Update your personal details below</p>
+        <h1 style="font-size: 2rem; font-weight: 700;">Leave a Review</h1>
+        <p class="text-muted">Submit or update a review for a service rendered</p>
       </div>
     </section>
 
     <section class="section" style="padding: 1rem;">
         <div class="container" style="max-width: 800px; max-height:fit-content;">
         <div class="card" style="padding:1rem">
-
-            <form id="customerForm" style = "margin-left:5rem; margin-right:5rem">
+            
+            <form id="reviewForm" style = "margin-left:5rem; margin-right:5rem">
                 <!-- Information Change Form -->
-
+                <h3>Your Review for Cami G.</h3>
                 <div class="form-group">
-                <label for="firstName">First Name</label><br>
-                <input type="text" id="firstName" placeholder="Corina" required="">
+                        <!-- Rating -->
+                    <label for="rating">Rating (1-5)*</label><br>
+                    <select id="rating" required="">
+                        <option value="">Select a rating...</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
-                <label for="lastName">Last Name</label><br>
-                <input type="text" id="lastName" placeholder="PB" required="">
-                </div>
-
-                <div class="form-group">
-                <label for="email">Email Address</label><br>
-                <input type="email" id="email" placeholder="corina@example.com" required="">
+                <label for="review">Your Review*</label><br>
+                    <textarea id="review" rows="4" cols="65">Demonstrated excellent care with Tachanka.</textarea>
                 </div>
 
 
                 <!-- Submit Button -->
-                <button type="button" class="btn btn-success btn-large" onclick="confirmChanges()" style="width: 100%; margin-top: 1.5rem;">
-                Confirm Changes
+                <button type="button" class="btn btn-success btn-large" onclick="window.location.href = 'dashboard.html'" style="width: 100%; margin-top: 1.5rem;">
+                Submit Review
                 </button>
 
             </form>
@@ -70,11 +73,11 @@
 
 
  <script>
-    function confirmChanges() {
-      const form = document.getElementById('customerForm');
+    function submit() {
+      const form = document.getElementById('reviewForm');
       if (form.checkValidity()) {
-        // Navigate to customer profile
-        window.location.href = 'profile.html';
+        // Navigate to customer dashboard
+        window.location.href = 'dashboard.html';
       } else {
         alert('Please fill in all required fields');
       }
