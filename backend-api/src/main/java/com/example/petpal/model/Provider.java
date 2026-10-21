@@ -1,12 +1,10 @@
 package com.example.petpal.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
 import java.util.List;
 
 @Entity
 @Table(name = "providers")
-@Data
 public class Provider {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,4 +16,20 @@ public class Provider {
     
     @OneToMany(mappedBy = "provider", cascade = CascadeType.ALL)
     private List<ServiceEntity> services;
+
+    // Getters and Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+
+    public String getCategory() { return category; }
+    public void setCategory(String category) { this.category = category; }
+
+    public List<ServiceEntity> getServices() { return services; }
+    public void setServices(List<ServiceEntity> services) { this.services = services; }
 }
