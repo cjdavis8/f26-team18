@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonManagedReference; // 1. Add this imp
 import jakarta.persistence.*;
 import java.util.List;
 
+import com.example.petpal.entity.*;
+
 @Entity
 @Table(name = "reviews")
 public class Review {
@@ -14,6 +16,10 @@ public class Review {
     private Long providerId;
     private int rating;
     private String comment;
+
+    private Customer customer;
+    private Provider provider;
+    private ServiceBooking booking;
     
     @OneToMany(mappedBy = "review", cascade = CascadeType.ALL)
     @JsonManagedReference // 2. Add this annotation here
@@ -26,6 +32,12 @@ public class Review {
     public Long getProviderId() { return providerId; }
     public void setProviderId(Long providerId) { this.providerId = providerId; }
 
+    public Customer getCustomer() { return customer;}
+    public void setCustomer(Customer customer) { this.customer = customer; }
+
+    public Provider getProvider() { return provider;}
+    public void setProvider(Provider provider) { this.provider = provider; }
+
     public int getRating() { return rating; }
     public void setRating(int rating) { this.rating = rating; }
 
@@ -34,4 +46,9 @@ public class Review {
 
     public List<ReviewReply> getReplies() { return replies; }
     public void setReplies(List<ReviewReply> replies) { this.replies = replies; }
+
+    public ServiceBooking getBooking() { return booking; }
+    public void setBooking(ServiceBooking booking) {this.booking = booking;}
+
+    
 }

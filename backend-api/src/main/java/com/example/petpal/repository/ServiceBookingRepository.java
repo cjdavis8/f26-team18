@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface ServiceBookingRepository extends JpaRepository<ServiceBooking, Long> {
     List<ServiceBooking> findAllByCustomerIdOrderByIdDesc(Long customerId);
 
-    List<ServiceBooking> findAllByTrainingService_Trainer_IdOrderByIdDesc(Long trainerId);
+    List<ServiceBooking> findAllByService_Provider_IdOrderByIdDesc(Long providerId);
 
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("select trainingSession from TrainingSession trainingSession "

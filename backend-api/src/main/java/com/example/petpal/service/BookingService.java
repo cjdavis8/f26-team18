@@ -57,7 +57,7 @@ public class BookingService {
 
     @Transactional(readOnly = true)
     public List<BookingServiceResponse> listForTrainer(Long trainerId) {
-        return bookingRepository.findAllByTrainingService_Trainer_IdOrderByIdDesc(trainerId)
+        return bookingRepository.findAllByService_Provider_IdOrderByIdDesc(trainerId)
                 .stream().map(BookingServiceResponse::from).toList();
     }
 
