@@ -28,6 +28,10 @@ public class ServiceBooking {
     @JoinColumn(name = "service_entity_id", nullable = false)
     private ServiceEntity serviceEntity;
 
+    @OneToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "timeslot_id", nullable = true, unique = true)
+    private Timeslot timeslot;
+
     @OneToOne(mappedBy = "service_booking", fetch = FetchType.LAZY)
     @JsonIgnore
     private Review review;
@@ -71,5 +75,19 @@ public class ServiceBooking {
 
     public void setReview(Review review) {
         this.review = review;
+    }
+
+    public Timeslot getTimeslot() {
+        return timeslot;
+    }
+
+    public void setTimeslot(Timeslot timeslot) {
+        if (this.timeslot != null && this.timeslot.getServiceBooking() == this) {
+            this.timeslot.setServiceBooking(null);
+        }
+        this.timeslot = timeslot;
+        if (timeslot != null && timeslot.getServiceBooking() != this) {
+            timeslot.setServiceBooking(this);
+        }
     }
 }
