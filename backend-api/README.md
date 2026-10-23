@@ -4,6 +4,15 @@
 
 ![Class Diagram](../docs/projectbackendapi_uml.png)
 
+# Customer Endpoints
+| Method | Path                            | Purpose                                                    | Response code | Error codes | User story                                                              |
+| ------ | ------------------------------- | ---------------------------------------------------------- | ------------- | ----------- | ----------------------------------------------------------------------- |
+| `POST` | `/api/customers`                | Register a new customer.  | `201 Created` | `400, 409`  |  New customer Creation
+| `PUT` | `/api/customers/{id}`                | update existing customer details.  | `201 Created` | `400, 409`  |  update customer profile
+| `GET` | `/api/services`                | Browse provider services.  | `201 Created` | `400, 409`  |  Browse Services
+| `POST` | `/api/customers/{id}/subscriptions`                | Subscribe to a service.  | `200 OK` | `400, 409`  |  Subscribe to Service
+| `POST` | `/api/services/{serviceId}/reviews`                | Add a review to a service.  | `201 Created` | `400, 409`  |  review a service
+
 # Provider Endpoints
 | Method | Path                            | Purpose                                                    | Response code | Error codes | User story                                                              |
 | ------ | ------------------------------- | ---------------------------------------------------------- | ------------- | ----------- | ----------------------------------------------------------------------- |
@@ -15,6 +24,8 @@
 | `POST` | `/api/services`                | Add a new service offering to a provider.  | `201 Created` | `400, 409`  |  Add Service
 | `PUT` | `/api/services/{id}`                | Update an existing service's details or price.  | `200 OK` | `400, 409`  |  Update Service
 | `POST` | `/api/reviews/{reviewId}/replies`                | Add a reply to a specific review.  | `201 Created` | `400, 409`  |  Reply to reviews
+
+
 
 ## Example Request
 

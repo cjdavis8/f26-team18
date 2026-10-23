@@ -32,7 +32,7 @@ public class ServiceBooking {
     @JoinColumn(name = "timeslot_id", nullable = true, unique = true)
     private Timeslot timeslot;
 
-    @OneToOne(mappedBy = "service_booking", fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, optional = true)
     @JsonIgnore
     private Review review;
 

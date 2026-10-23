@@ -13,10 +13,10 @@ import java.util.Optional;
 public interface ServiceBookingRepository extends JpaRepository<ServiceBooking, Long> {
     List<ServiceBooking> findAllByCustomerIdOrderByIdDesc(Long customerId);
 
-    List<ServiceBooking> findAllByService_Provider_IdOrderByIdDesc(Long providerId);
+    List<ServiceBooking> findAllByServiceEntity_Provider_IdOrderByIdDesc(Long providerId);
 
     @Lock(LockModeType.PESSIMISTIC_WRITE)
-    @Query("select trainingSession from TrainingSession trainingSession "
-            + "where trainingSession.id = :id")
+    @Query("select booking from ServiceBooking booking "
+            + "where booking.id = :id")
     Optional<ServiceBooking> findByIdForUpdate(@Param("id") Long id);
 }
