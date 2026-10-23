@@ -75,6 +75,6 @@
 
 ## link to deployed api:
 
-https://f26-team18.onrender.com/backend-api/
+https://f26-team18.onrender.com/api/
 
 Note: free Render services sleep when idle, so the first request can take up to a minute. 
