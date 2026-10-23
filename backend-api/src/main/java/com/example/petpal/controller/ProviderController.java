@@ -16,6 +16,11 @@ public class ProviderController {
         this.providerService = providerService;
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Provider> getProviderById(@PathVariable Long id) {
+        return ResponseEntity.ok(providerService.getProviderById(id));
+    }
+
     @PostMapping
     public ResponseEntity<Provider> createProvider(@RequestBody Provider provider) {
         return ResponseEntity.ok(providerService.saveProvider(provider));

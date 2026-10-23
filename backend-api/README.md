@@ -73,7 +73,6 @@
 }
 ```
 
-=======
 ## link to deployed api:
 
 https://f26-team18.onrender.com/backend-api/
