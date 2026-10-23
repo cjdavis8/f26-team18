@@ -2,7 +2,7 @@
 
 # UML
 
-![Class Diagram](../docs/projectbackendapi_uml.png)
+![Class Diagram](../docs/project-backendapio_uml.png)
 
 # Customer Endpoints
 | Method | Path                            | Purpose                                                    | Response code | Error codes | User story                                                              |
