@@ -1,0 +1,9 @@
+package com.example.petpal.dto;
+
+
+import jakarta.validation.constraints.*;
+
+public record ReviewRequest(
+        @NotNull @Min(1) @Max(5) Integer rating,
+        @Size(max = 2000) String comments) {
+}
