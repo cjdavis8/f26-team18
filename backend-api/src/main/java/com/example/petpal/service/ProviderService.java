@@ -39,4 +39,9 @@ public class ProviderService {
         stats.put("averageRating", 4.8);
         return stats;
     }
+
+    public Provider getProviderById(Long id) {
+    return providerRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Provider not found with id: " + id));
+}
 }
