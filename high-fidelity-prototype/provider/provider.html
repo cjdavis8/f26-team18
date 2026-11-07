@@ -7,16 +7,16 @@
  <header class="site-header">
 <!-- LEFT: BUTTONS -->
 <div class="header-left">
-  <a href="homepage.html"> <button>Home</button></a>
+  <a href="high-fidelity-prototype/homepage.html"> <button>Home</button></a>
   <button class="header-button">About</button>
   <button class="header-button">Services</button>
   <button class="header-button">Help</button>
-  <a href="provider.html"> <button>Provider</button></a>
+  <a href="high-fidelity-prototype/provider/provider.html"> <button>Provider</button></a>
 
 </div>
 <!-- CENTER: LOGO AND RETURN TO HOMEPAGE -->
 <div class="header-center">
-  <a href="homepage.html"><img src="https://i.imgur.com/NFH2TyE.png" alt="PetPal Header Logo" class="logo"></a>
+  <a href="high-fidelity-prototype/homepage.html"><img src="https://i.imgur.com/NFH2TyE.png" alt="PetPal Header Logo" class="logo"></a>
 </div>
 <!-- RIGHT: LOGIN AND REGISTER -->
 <div class="header-right">
@@ -60,37 +60,6 @@
         <button type="submit">Submit</button>
       </form>
     </section>
-
-    <p><strong>Provider Actions</strong></p>
-<div class="provider-actions">
-      <button type="button" class="action-btn" id="avail-btn">Change Availability</button>
-      <button type="button" class="action-btn" id="price-btn">Adjust Prices</button>
-      <button type="button" class="action-btn" id="service-btn">Manage Services</button>
-<script>
-  
-  // Handle "Change Availability" button
-  document.getElementById('avail-btn').addEventListener('click', function() {
-    let days = prompt("Enter your available days (e.g., Monday - Friday):");
-    if (days) {
-      alert("Availability successfully updated to: " + days);
-    }
-  });
-
-  // Handle "Adjust Prices" button
-  document.getElementById('price-btn').addEventListener('click', function() {
-    let price = prompt("Enter new base rate price per service (e.g., $30/walk):");
-    if (price) {
-      alert("Base price successfully updated to: " + price);
-    }
-  });
-
-  // Handle "Manage Services" button
-  document.getElementById('service-btn').addEventListener('click', function() {
-    let services = prompt("Enter your available services (e.g., Grooming, Walking, Pet Sitting):");
-    if (services) {
-      alert("Services successfully updated to: " + services);
-    }
-  });
 
 </script>
 
