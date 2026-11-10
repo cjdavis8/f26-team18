@@ -36,12 +36,16 @@ public class ProviderService {
 
     // Create a new provider profile
     @Transactional
-    public Provider createProvider(Provider provider) {
-        if (providerRepository.existsByEmail(provider.getEmail())) {
-            throw new RuntimeException("A provider with this email already exists: " + provider.getEmail());
-        }
-        return providerRepository.save(provider);
+public Provider createProvider(Provider provider) {
+    if (providerRepository.existsByEmail(provider.getEmail())) {
+        throw new RuntimeException("A provider with this email already exists: " + provider.getEmail());
     }
+    // Temporary fix if userId is required by your schema
+    if (provider.getUserId() == null) {
+        provider.setUserId(System.currentTimeMillis()); // Generates a unique numeric ID
+    }
+    return providerRepository.save(provider);
+}
 
     // Update an existing provider profile
     @Transactional
@@ -54,10 +58,17 @@ public class ProviderService {
         existingProvider.setBusinessName(providerDetails.getBusinessName());
         existingProvider.setPhoneNumber(providerDetails.getPhoneNumber());
         existingProvider.setAboutMe(providerDetails.getAboutMe());
+        existingProvider.setLocation(providerDetails.getLocation());
+        existingProvider.setHistory(providerDetails.getHistory());
         existingProvider.setPfpImageUrl(providerDetails.getPfpImageUrl());
         existingProvider.setSpecialties(providerDetails.getSpecialties());
         existingProvider.setServicesOffered(providerDetails.getServicesOffered());
         existingProvider.setAvailability(providerDetails.getAvailability());
+        existingProvider.setServicePrices(providerDetails.getServicePrices());
+
+        if (providerDetails.getPassword() != null && !providerDetails.getPassword().trim().isEmpty()) {
+            existingProvider.setPassword(providerDetails.getPassword());
+        }
 
         return providerRepository.save(existingProvider);
     }

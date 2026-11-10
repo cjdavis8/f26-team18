@@ -16,7 +16,7 @@ public class Provider {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_id", unique = true, nullable = false)
+    @Column(name = "user_id")
     private Long userId;
 
     @Column(name = "pfp_image_url")
@@ -34,19 +34,31 @@ public class Provider {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @Column(nullable = false)
+    private String password;
+
+    @Column(nullable = false)
+    private String location;
+
     @Column(name = "phone_number", length = 20)
     private String phoneNumber;
 
-    @Lob
+    @Column(name = "history")
+    private String history;
+
     @Column(name = "about_me", columnDefinition = "TEXT")
     private String aboutMe;
+
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "service_prices", columnDefinition = "jsonb")
+    private Map<String, Double> servicePrices;
 
     // Maps to PostgreSQL text[] array
     @JdbcTypeCode(SqlTypes.ARRAY)
     @Column(name = "specialties", columnDefinition = "text[]")
     private List<String> specialties;
 
-    // Maps to PostgreSQL JSONB for service checkboxes (e.g., {"dog_walking": true, "grooming": false})
+    // Maps to PostgreSQL JSONB for service checkboxes
     @JdbcTypeCode(SqlTypes.JSON)
     @Column(name = "services_offered", columnDefinition = "jsonb")
     private Map<String, Boolean> servicesOffered;
@@ -64,11 +76,12 @@ public class Provider {
     public Provider() {
     }
 
-    public Provider(Long userId, String firstName, String lastName, String email) {
+    public Provider(Long userId, String firstName, String lastName, String email, String password) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.password = password; // --- ADDED ---
     }
 
     public String getName() {
@@ -101,11 +114,24 @@ public class Provider {
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 
+    // --- ADD GETTER & SETTER FOR PASSWORD ---
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+
+    public String getLocation() { return location; }
+    public void setLocation(String location) { this.location = location; }
+    
     public String getPhoneNumber() { return phoneNumber; }
     public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
 
+    public String getHistory() { return history; }
+    public void setHistory(String history) { this.history = history; }
+
     public String getAboutMe() { return aboutMe; }
     public void setAboutMe(String aboutMe) { this.aboutMe = aboutMe; }
+
+    public Map<String, Double> getServicePrices() { return servicePrices; }
+    public void setServicePrices(Map<String, Double> servicePrices) { this.servicePrices = servicePrices; }
 
     public List<String> getSpecialties() { return specialties; }
     public void setSpecialties(List<String> specialties) { this.specialties = specialties; }
@@ -117,4 +143,13 @@ public class Provider {
     public void setAvailability(Map<String, Object> availability) { this.availability = availability; }
 
     public LocalDateTime getCreatedAt() { return createdAt; }
+
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "reviews", columnDefinition = "jsonb")
+    private List<Map<String, Object>> reviews;
+
+    // Getter and Setter
+    public List<Map<String, Object>> getReviews() { return reviews; }
+    public void setReviews(List<Map<String, Object>> reviews) { this.reviews = reviews; }
+
 }
