@@ -3,45 +3,69 @@ package com.example.petpal.service;
 import com.example.petpal.model.Provider;
 import com.example.petpal.repository.ProviderRepository;
 import org.springframework.stereotype.Service;
-import java.util.HashMap;
-import java.util.Map;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProviderService {
 
     private final ProviderRepository providerRepository;
 
-    ProviderService(ProviderRepository providerRepository) {
+    // Constructor-based dependency injection
+    public ProviderService(ProviderRepository providerRepository) {
         this.providerRepository = providerRepository;
     }
 
-    public Provider saveProvider(Provider provider) {
-        return providerRepository.save(provider);
+    // Get all providers (useful for directory views)
+    public List<Provider> getAllProviders() {
+        return providerRepository.findAll();
     }
 
-    public Provider updateProvider(Long id, Provider providerDetails) {
-        Provider provider = providerRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Provider not found with id: " + id));
-        provider.setName(providerDetails.getName());
-        provider.setEmail(providerDetails.getEmail());
-        provider.setCategory(providerDetails.getCategory());
-        return providerRepository.save(provider);
-    }
-
-    public Map<String, Object> getCustomerStatistics(Long id) {
-        Provider provider = providerRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Provider not found with id: " + id));
-        
-        Map<String, Object> stats = new HashMap<>();
-        stats.put("providerId", provider.getId());
-        stats.put("totalCustomers", 142); 
-        stats.put("activeBookings", 12);
-        stats.put("averageRating", 4.8);
-        return stats;
-    }
-
+    // Get a provider by their primary database ID
     public Provider getProviderById(Long id) {
-    return providerRepository.findById(id)
-            .orElseThrow(() -> new RuntimeException("Provider not found with id: " + id));
-}
+        return providerRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Provider not found with id: " + id));
+    }
+
+    // Get a provider by their linked user ID
+    public Optional<Provider> getProviderByUserId(Long userId) {
+        return providerRepository.findByUserId(userId);
+    }
+
+    // Create a new provider profile
+    @Transactional
+    public Provider createProvider(Provider provider) {
+        if (providerRepository.existsByEmail(provider.getEmail())) {
+            throw new RuntimeException("A provider with this email already exists: " + provider.getEmail());
+        }
+        return providerRepository.save(provider);
+    }
+
+    // Update an existing provider profile
+    @Transactional
+    public Provider updateProvider(Long id, Provider providerDetails) {
+        Provider existingProvider = getProviderById(id);
+
+        // Update fields if provided
+        existingProvider.setFirstName(providerDetails.getFirstName());
+        existingProvider.setLastName(providerDetails.getLastName());
+        existingProvider.setBusinessName(providerDetails.getBusinessName());
+        existingProvider.setPhoneNumber(providerDetails.getPhoneNumber());
+        existingProvider.setAboutMe(providerDetails.getAboutMe());
+        existingProvider.setPfpImageUrl(providerDetails.getPfpImageUrl());
+        existingProvider.setSpecialties(providerDetails.getSpecialties());
+        existingProvider.setServicesOffered(providerDetails.getServicesOffered());
+        existingProvider.setAvailability(providerDetails.getAvailability());
+
+        return providerRepository.save(existingProvider);
+    }
+
+    // Delete a provider profile
+    @Transactional
+    public void deleteProvider(Long id) {
+        Provider provider = getProviderById(id);
+        providerRepository.delete(provider);
+    }
 }

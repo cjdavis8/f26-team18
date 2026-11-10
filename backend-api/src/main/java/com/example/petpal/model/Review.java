@@ -1,5 +1,6 @@
 package com.example.petpal.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference; // 1. Add this import
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -21,10 +22,12 @@ public class Review {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id")
+    @JsonIgnore
     private Customer customer;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "provider_id")
+    @JsonIgnore 
     private Provider provider;
 
     @NotNull

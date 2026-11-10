@@ -69,6 +69,7 @@ public ReviewResponse create(Long customerId, Long bookingId, ReviewRequest requ
         return ReviewResponse.from(reviewRepository.save(review));
     }
 
+    @Transactional(readOnly = true)
     public List<Review> getReviewsByProvider(Long providerId) {
         return reviewRepository.findByProviderId(providerId);
     }
@@ -79,4 +80,5 @@ public ReviewResponse create(Long customerId, Long bookingId, ReviewRequest requ
         reply.setReview(review);
         return reviewReplyRepository.save(reply);
     }
+
 }
