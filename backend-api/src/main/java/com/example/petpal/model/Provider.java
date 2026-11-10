@@ -114,7 +114,7 @@ public class Provider {
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 
-    // --- ADD GETTER & SETTER FOR PASSWORD ---
+    
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
 
@@ -148,7 +148,6 @@ public class Provider {
     @Column(name = "reviews", columnDefinition = "jsonb")
     private List<Map<String, Object>> reviews;
 
-    // Getter and Setter
     public List<Map<String, Object>> getReviews() { return reviews; }
     public void setReviews(List<Map<String, Object>> reviews) { this.reviews = reviews; }
 

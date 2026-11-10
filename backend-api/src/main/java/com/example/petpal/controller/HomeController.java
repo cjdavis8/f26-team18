@@ -24,6 +24,8 @@ import java.util.List;
 @Controller
 public class HomeController {
 
+    // Repository and service injections
+    
     @Autowired
     private ProviderRepository ProviderRepository;
 
@@ -63,19 +65,20 @@ public class HomeController {
     return "provider/dashboard";
 }
 
+    // Logout button mapping
 @PostMapping("/logout")
     public String logout(HttpSession session) {
-        session.invalidate(); // Clears all session attributes (including loggedInProvider)
+        session.invalidate(); 
         return "redirect:/";
     }
 
-    // --- Database-Backed Authentication Endpoints ---
+    // Backend Endpoints for database
 
     @PostMapping("/provider/login")
 public String loginProvider(@RequestParam String email, 
                             @RequestParam String password, 
                             HttpSession session,
-                            RedirectAttributes redirectAttributes) { // Switch Model to RedirectAttributes
+                            RedirectAttributes redirectAttributes) {
     Optional<Provider> providerOpt = ProviderRepository.findByEmail(email);
 
     if (providerOpt.isPresent()) {
@@ -87,23 +90,23 @@ public String loginProvider(@RequestParam String email,
         }
     }
 
-    // If login fails, redirect back to /login with an error flag
+    // Login Error
     redirectAttributes.addFlashAttribute("error", "Invalid email or password for service provider account.");
     return "redirect:/login";
 }
 
-    // Inject ProviderService via constructor
+    // Shows Services of Provider
     public HomeController(ProviderService providerService) {
         this.providerService = providerService;
     }
 
-    // Existing login/homepage mappings...
+    // Mappings for services and providers
 
     @GetMapping("/services")
     public String viewServicesAndProviders(Model model) {
         List<Provider> providers = providerService.getAllProviders();
         model.addAttribute("providers", providers);
-        return "provider/services"; // Matches templates/provider/services.ftlh
+        return "provider/services"; 
     }
 
     @Autowired
@@ -113,6 +116,7 @@ public String loginProvider(@RequestParam String email,
     public String viewProviderProfile(@PathVariable Long id, Model model) {
         Provider provider = providerService.getProviderById(id);
         
+        // Fetch reviews for the provider
         List<Review> reviews = reviewRepository.findByProviderIdWithReplies(id);
         
         model.addAttribute("provider", provider);

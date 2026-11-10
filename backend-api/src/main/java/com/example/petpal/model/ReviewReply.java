@@ -10,9 +10,9 @@ public class ReviewReply {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Ensure this maps correctly to your database column name if it's reply_text
+    
     @Column(name = "reply_text") 
-    private String comment; // Or rename the field to replyText if you prefer
+    private String comment;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "review_id")

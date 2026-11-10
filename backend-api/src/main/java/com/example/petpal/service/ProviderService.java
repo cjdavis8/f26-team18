@@ -18,7 +18,7 @@ public class ProviderService {
         this.providerRepository = providerRepository;
     }
 
-    // Get all providers (useful for directory views)
+    // Get all providers
     public List<Provider> getAllProviders() {
         return providerRepository.findAll();
     }
@@ -40,14 +40,14 @@ public Provider createProvider(Provider provider) {
     if (providerRepository.existsByEmail(provider.getEmail())) {
         throw new RuntimeException("A provider with this email already exists: " + provider.getEmail());
     }
-    // Temporary fix if userId is required by your schema
+    
     if (provider.getUserId() == null) {
-        provider.setUserId(System.currentTimeMillis()); // Generates a unique numeric ID
+        provider.setUserId(System.currentTimeMillis());
     }
     return providerRepository.save(provider);
 }
 
-    // Update an existing provider profile
+    // Updating an existing user profile
     @Transactional
     public Provider updateProvider(Long id, Provider providerDetails) {
         Provider existingProvider = getProviderById(id);
