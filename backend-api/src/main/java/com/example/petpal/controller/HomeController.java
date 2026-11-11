@@ -104,6 +104,8 @@ public String loginProvider(@RequestParam String email,
         if (provider.getPassword().equals(password)) {
             // Save provider in session upon successful login
             session.setAttribute("loggedInProvider", provider);
+            session.setAttribute("userId", provider.getId());
+            session.setAttribute("userRole", "provider");
             return "redirect:/provider/dashboard";
         }
     }
@@ -125,6 +127,8 @@ public String loginCustomer(@RequestParam String email,
         if (customer.getPassword().equals(password)) {
             // Save provider in session upon successful login
             session.setAttribute("loggedInCustomer", customer);
+            session.setAttribute("userId", customer.getId());
+            session.setAttribute("userRole", "customer");
             return "redirect:/customer/dashboard";
         }
     }
