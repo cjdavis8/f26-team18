@@ -16,7 +16,7 @@
                     </#if>
 
                     <!-- Provider Login Form -->
-                    <form action="/provider/login" method="POST">
+                    <form >
                         <div class="form-group mb-3">
                             <label for="email" class="form-label">Email Address</label>
                             <input type="email" id="email" name="email" class="form-control" placeholder="alex@example.com" required>
@@ -35,11 +35,11 @@
                             <a href="#" style="text-decoration: none;">Forgot password?</a>
                         </div>
 
-                        <button type="submit" class="btn btn-success btn-lg w-100 mt-2">
+                        <button type="submit" formaction="/customer/login" class="btn btn-success btn-lg w-100 mt-2">
                             Sign in as a Customer
                         </button>
 
-                        <button type="submit" class="btn btn-success btn-lg w-100 mt-2">
+                        <button type="submit" formaction="/provider/login" class="btn btn-success btn-lg w-100 mt-2">
                             Sign in as a Service Provider
                         </button>
                     </form>
