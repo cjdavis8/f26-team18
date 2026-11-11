@@ -16,7 +16,7 @@
                     </#if>
 
                     <!-- Provider Login Form -->
-                    <form >
+                    <form method="POST">
                         <div class="form-group mb-3">
                             <label for="email" class="form-label">Email Address</label>
                             <input type="email" id="email" name="email" class="form-control" placeholder="alex@example.com" required>
