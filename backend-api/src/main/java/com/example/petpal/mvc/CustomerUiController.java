@@ -3,7 +3,7 @@ package com.example.petpal.mvc;
 
 import com.example.petpal.dto.*;
 import com.example.petpal.repository.*;
-import com.example.petpal.entity.Customer;
+import com.example.petpal.entity.*;
 import com.example.petpal.service.*;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
@@ -20,14 +20,17 @@ import java.util.Optional;
 public class CustomerUiController {
 
     private final CustomerService customerService;
+    //private final PetService petService;
     private final BookingService bookingService;
     private final CustomerRepository customerRepository;
 
     public CustomerUiController(
             CustomerService customerService,
+            //PetService petService,
             BookingService bookingService,
             CustomerRepository customerRepository) {
         this.customerService = customerService;
+        //this.petService = petService;
         this.bookingService = bookingService;
         this.customerRepository = customerRepository;
     }
@@ -48,5 +51,22 @@ public class CustomerUiController {
                 customerService.getProfile(UiSession.requireId(session, "customer")));
         return "customer/profile";
     }
+
+    @GetMapping("/edit-details")
+    public String editDetails(HttpSession session, Model model) {
+        model.addAttribute("customer",
+                customerService.getProfile(UiSession.requireId(session, "customer")));
+        return "customer/edit-details";
+    }
+    
+/** 
+    @GetMapping("/pets/{petId}")
+    public String petProfile(@PathVariable Long petId, Model model) {
+        Pet pet = petService.PetResponse();
+        model.addAttribute("pet", pet);
+        return "customer/pets/{petId}/pet-profile";
+    }
+        */
+
 
 }
