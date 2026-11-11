@@ -14,18 +14,18 @@
 
                         <div class="form-group">
                             <label for="name">Full Name</label><br>
-                            <input type="text" id="name" placeholder="Corina" required>
+                            <input type="text" id="name" name="name" placeholder="Corina" required>
                         </div>
 
 
                         <div class="form-group">
                             <label for="email">Email Address</label><br>
-                            <input type="email" id="email" placeholder="corina@example.com" required>
+                            <input type="email" id="email" name="email" placeholder="corina@example.com" required>
                         </div>
 
                         <div class="form-group">
                             <label for="password">Password</label><br>
-                            <input type="password" id="password" placeholder="••••••••" required>
+                            <input type="password" id="password" name="password" placeholder="••••••••" required>
                         </div>
 
                         <!-- Pet Information -->

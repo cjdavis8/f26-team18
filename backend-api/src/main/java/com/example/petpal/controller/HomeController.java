@@ -54,7 +54,7 @@ public class HomeController {
         return "customer/register";
     }
 
-    @PostMapping("/register")
+    @PostMapping("/customer/register")
     public String createCustomer(@Valid CustomerRegistrationRequest request, HttpSession session) {
         CustomerResponse customer = customerService.register(request);
         session.setAttribute("userId", customer.id());
