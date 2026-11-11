@@ -30,7 +30,7 @@ public class Timeslot {
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "trainer_id", nullable = false)
+    @JoinColumn(name = "provider_id", nullable = false)
     private Provider provider;
 
     @OneToOne(mappedBy = "timeslot", fetch = FetchType.LAZY)
