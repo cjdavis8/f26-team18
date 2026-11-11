@@ -37,10 +37,10 @@
                 </form>
             <#elseif Session["loggedInCustomer"]?? || (isLoggedIn!false)]>
                 <form action="/customer/dashboard" method="GET" style="display: inline;">
-                    <button type="submit" class="header-button" style="background-color: #d9534f; color: white;">Dashboard</button>
+                    <button type="submit" class="header-button" style="background-color: #eee7e7; color: black;">Dashboard</button>
                 </form>
                 <form action="/customer/profile" method="GET" style="display: inline;">
-                    <button type="submit" class="header-button" style="background-color: #d9534f; color: white;">My Profile</button>
+                    <button type="submit" class="header-button" style="background-color: #eee7e7; color: black;">My Profile</button>
                 </form>
                 <form action="/logout" method="POST" style="display: inline;">
                     <button type="submit" class="header-button" style="background-color: #d9534f; color: white;">Logout</button>

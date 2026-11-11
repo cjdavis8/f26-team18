@@ -51,21 +51,20 @@
             <h2 style="margin: 0; font-size: 1.3rem; font-weight: 700;">${customer.name()}'s Pets</h2>
           </div>
 
-          <#list pets as pet>
+          <#list customer.pets() as pet>
             <div class="card-content">
-            <div class="form-group">
+                <div class="form-group">
 
-                <div class = "pets-container" style="padding:1rem;">
-                    <div class="pets-block" onclick="location.href='/customer/pets/${pet.id()}/profile';" style="cursor: pointer;">
-                        <h3>Tachanka</h3>
-                        <img src="../images/tachanka.jpg" alt="${pet.name}" class="pet-image" style="margin-bottom:.5rem"><br>
-                    </div>
-                    
+                    <div class = "pets-container" style="padding:1rem;">
+                        <div class="pets-block" onclick="location.href='/customer/pets/${pet.id}/profile';" style="cursor: pointer;">
+                            <h3>${pet.name}</h3>
+                            <img src="../images/tachanka.jpg" alt="${pet.name}" class="pet-image" style="margin-bottom:.5rem"><br>
+                        </div>
+                        
+                        </div>
                     </div>
                 </div>
-          </div>
-        </div>
-          </#if>
+            </div>
         </#list>
 
         <!-- Account Settings Card -->
@@ -83,3 +82,4 @@
     </section>
 
   </div>
+  </@l.layout>
