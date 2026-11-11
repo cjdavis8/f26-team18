@@ -35,6 +35,16 @@
                 <form action="/logout" method="POST" style="display: inline;">
                     <button type="submit" class="header-button" style="background-color: #d9534f; color: white;">Logout</button>
                 </form>
+            <#elseif Session["loggedInCustomer"]?? || (isLoggedIn!false)]>
+                <form action="/customer/dashboard" method="GET" style="display: inline;">
+                    <button type="submit" class="header-button" style="background-color: #d9534f; color: white;">Dashboard</button>
+                </form>
+                <form action="/customer/profile" method="GET" style="display: inline;">
+                    <button type="submit" class="header-button" style="background-color: #d9534f; color: white;">My Profile</button>
+                </form>
+                <form action="/logout" method="POST" style="display: inline;">
+                    <button type="submit" class="header-button" style="background-color: #d9534f; color: white;">Logout</button>
+                </form>
             <#else>
                 <a href="/login"><button class="header-button">Login</button></a>
                 <a href="/customer/register"><button class="header-button">Register</button></a>
