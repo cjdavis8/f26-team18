@@ -19,27 +19,32 @@ public class BookingService {
     private final CustomerRepository customerRepository;
     private final ServiceRepository serviceRepository;
     private final TimeslotRepository timeslotRepository;
+    private final PetRepository petRepository;
 
     public BookingService(
             ServiceBookingRepository bookingRepository,
             CustomerRepository customerRepository,
             ServiceRepository serviceRepository,
-            TimeslotRepository timeslotRepository) {
+            TimeslotRepository timeslotRepository,
+            PetRepository petRepository) {
         this.bookingRepository = bookingRepository;
         this.customerRepository = customerRepository;
         this.serviceRepository = serviceRepository;
         this.timeslotRepository = timeslotRepository;
+        this.petRepository = petRepository;
     }
 
-    public BookingServiceResponse book(Long customerId, BookingRequest request) {
+    public BookingServiceResponse book(Long customerId, Long petId, BookingRequest request) {
         Customer customer = customerRepository.findById(customerId)
                 .orElseThrow(() -> new NotFoundException("Customer " + customerId + " was not found."));
-        ServiceEntity serviceEntity = serviceRepository.findById(request.trainingServiceId())
+        Pet pet = petRepository.findById(petId).orElseThrow(()-> new NotFoundException("Pet " + petId + " was not found."));
+        ServiceEntity serviceEntity = serviceRepository.findById(request.serviceEntityId())
                 .orElseThrow(() -> new NotFoundException(
-                        "Service " + request.trainingServiceId() + " was not found."));
+                        "Service " + request.serviceEntityId() + " was not found."));
 
 
         ServiceBooking booking = new ServiceBooking();
+        booking.setPet(pet);
         booking.setCustomer(customer);
         booking.setServiceEntity(serviceEntity);
         booking.setStatus("BOOKED");
