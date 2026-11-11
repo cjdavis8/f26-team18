@@ -5,6 +5,7 @@ import com.example.petpal.entity.ServiceBooking;
 
 import java.time.LocalDateTime;
 import java.math.BigDecimal;
+import java.time.format.DateTimeFormatter;
 
 public record BookingServiceResponse(
         Long id,
@@ -37,4 +38,15 @@ public record BookingServiceResponse(
                 booking.getTimeslot() == null ? null : booking.getTimeslot().getStartTime(), 
                 booking.getTimeslot() == null ? null : booking.getTimeslot().getEndTime());
     }
+
+    private static final DateTimeFormatter DISPLAY_DATE_TIME =
+        DateTimeFormatter.ofPattern("MMM d, yyyy h:mm a");
+
+    public String startTimeDisplay() {
+        return startTime == null ? "Not scheduled" : startTime.format(DISPLAY_DATE_TIME);
+    }
+
+    public String endTimeDisplay() {
+        return endTime == null ? "Not scheduled" : endTime.format(DISPLAY_DATE_TIME);
+}
 }
