@@ -37,8 +37,8 @@ public class CustomerUiController {
     public String dashboard(HttpSession session, Model model) {
         Long customerId = UiSession.requireId(session, "customer");
         model.addAttribute("customer", customerService.getProfile(customerId));
-        //model.addAttribute("bookings", bookingService.listForCustomer(customerId));
-        model.addAttribute("bookings", List.of());
+        model.addAttribute("bookings", bookingService.listForCustomer(customerId));
+        //model.addAttribute("bookings", List.of());    // testing purposes
         return "customer/dashboard";
     }
 
