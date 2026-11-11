@@ -114,6 +114,7 @@ public String loginProvider(@RequestParam String email,
     redirectAttributes.addFlashAttribute("error", "Invalid email or password for service provider account.");
     return "redirect:/login";
 }
+
     @PostMapping("/customer/login")
 public String loginCustomer(@RequestParam String email, 
                             @RequestParam String password, 

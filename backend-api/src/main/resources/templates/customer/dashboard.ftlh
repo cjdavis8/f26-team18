@@ -8,7 +8,7 @@
     <div class="container" >
 
         <div class = "black-box">
-            <h2> Welcome, ${customer.name}!</h2>
+            <h2> Welcome, ${customer.name()}!</h2>
         </div>
 
 
