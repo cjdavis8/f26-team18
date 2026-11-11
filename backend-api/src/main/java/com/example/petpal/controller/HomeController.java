@@ -140,10 +140,12 @@ public String loginCustomer(@RequestParam String email,
 
     // Inject ProviderService via constructor
     public HomeController(ProviderService providerService,
-        CustomerService customerService
+        CustomerService customerService,
+        CustomerRepository customerRepository
     ) {
         this.providerService = providerService;
         this.customerService = customerService;
+        this.customerRepository = customerRepository;
     }
 
     // Existing login/homepage mappings...
