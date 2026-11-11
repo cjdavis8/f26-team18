@@ -5,7 +5,7 @@ import com.example.petpal.model.Review;
 import com.example.petpal.repository.CustomerRepository;
 import com.example.petpal.repository.ProviderRepository;
 import com.example.petpal.repository.ReviewRepository;
-import com.example.petpal.service.ProviderService;
+import com.example.petpal.service.*;
 
 import com.example.petpal.entity.*;
 
@@ -32,6 +32,7 @@ public class HomeController {
 
     @Autowired
     private ProviderService providerService;
+    private CustomerService customerService;
 
     @GetMapping("/")
     public String home() {
@@ -47,6 +48,20 @@ public class HomeController {
     public String showCustomerRegister() {
         return "customer/register";
     }
+
+    @GetMapping("/customer/dashboard")
+    public String showCustomerDashboard(HttpSession session, Model model) {
+    Customer customer = (Customer) session.getAttribute("loggedInCustomer");
+    
+    if (customer == null) {
+        return "redirect:/login";
+    }
+
+    model.addAttribute("customer", customer);
+    model.addAttribute("isLoggedIn", true); // <--- Add this flag
+    return "customer/dashboard";
+
+}
 
     @GetMapping("/provider/register")
     public String showProviderRegister() {
@@ -64,6 +79,7 @@ public class HomeController {
     model.addAttribute("provider", provider);
     model.addAttribute("isLoggedIn", true); // <--- Add this flag
     return "provider/dashboard";
+
 }
 
 @PostMapping("/logout")
@@ -117,8 +133,11 @@ public String loginCustomer(@RequestParam String email,
 }
 
     // Inject ProviderService via constructor
-    public HomeController(ProviderService providerService) {
+    public HomeController(ProviderService providerService,
+        CustomerService customerService
+    ) {
         this.providerService = providerService;
+        this.customerService = customerService;
     }
 
     // Existing login/homepage mappings...
