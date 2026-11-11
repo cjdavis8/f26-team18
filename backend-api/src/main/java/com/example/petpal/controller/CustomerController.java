@@ -45,7 +45,7 @@ public class CustomerController {
         return customerService.updateProfile(customerId, request);
     }
 
-    @GetMapping("/{customerId}/services")
+    @GetMapping("/{customerId}/bookings")
     public List<BookingServiceResponse> sessions(@PathVariable Long customerId) {
         return bookingService.listForCustomer(customerId);
     }
@@ -55,23 +55,13 @@ public class CustomerController {
         return reviewService.listForCustomer(customerId);
     }
 
-    @PostMapping("/{customerId}/subscriptions")
-    public ResponseEntity<BookingServiceResponse> bookSession(
-            @PathVariable Long customerId,
-            @Valid @RequestBody BookingRequest request) {
-        BookingServiceResponse session = bookingService.book(customerId, request);
-        return ResponseEntity.created(URI.create("/api/customers/" + customerId
-                + "/sessions/" + session.id())).body(session);
-    }
-
-
-    @PostMapping("/{customerId}/sessions/{sessionId}/review")
+    @PostMapping("/{customerId}/bookings/{bookingId}/review")
     public ResponseEntity<ReviewResponse> reviewSession(
             @PathVariable Long customerId,
             @PathVariable Long sessionId,
             @Valid @RequestBody ReviewRequest request) {
         ReviewResponse review = reviewService.create(customerId, sessionId, request);
-        return ResponseEntity.created(URI.create("/api/trainers/" + review.providerId()
+        return ResponseEntity.created(URI.create("/api/provider/" + review.providerId()
                 + "/reviews/" + review.id())).body(review);
     }
 }

@@ -7,6 +7,8 @@ import com.example.petpal.repository.ProviderRepository;
 import com.example.petpal.repository.ReviewRepository;
 import com.example.petpal.service.ProviderService;
 
+import com.example.petpal.entity.*;
+
 import jakarta.servlet.http.HttpSession; // Use javax.servlet.http.HttpSession if on Spring Boot 2.x
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,7 @@ public class HomeController {
 
     @Autowired
     private ProviderRepository ProviderRepository;
+    private CustomerRepository CustomerRepository;
 
     @Autowired
     private ProviderService providerService;
@@ -89,6 +92,27 @@ public String loginProvider(@RequestParam String email,
 
     // If login fails, redirect back to /login with an error flag
     redirectAttributes.addFlashAttribute("error", "Invalid email or password for service provider account.");
+    return "redirect:/login";
+}
+    @PostMapping("/customer/login")
+public String loginCustomer(@RequestParam String email, 
+                            @RequestParam String password, 
+                            HttpSession session,
+                            RedirectAttributes redirectAttributes) { // Switch Model to RedirectAttributes
+
+    Optional<Customer> customerOpt = CustomerRepository.findByEmail(email);
+
+    if (customerOpt.isPresent()) {
+        Customer customer = customerOpt.get();
+        if (customer.getPassword().equals(password)) {
+            // Save provider in session upon successful login
+            session.setAttribute("loggedInCustomer", customer);
+            return "redirect:/customer/dashboard";
+        }
+    }
+
+    // If login fails, redirect back to /login with an error flag
+    redirectAttributes.addFlashAttribute("error", "Invalid email or password for customer account.");
     return "redirect:/login";
 }
 

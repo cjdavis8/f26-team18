@@ -36,7 +36,7 @@ public class BookingService {
                 .orElseThrow(() -> new NotFoundException("Customer " + customerId + " was not found."));
         ServiceEntity serviceEntity = serviceRepository.findById(request.trainingServiceId())
                 .orElseThrow(() -> new NotFoundException(
-                        "Training service " + request.trainingServiceId() + " was not found."));
+                        "Service " + request.trainingServiceId() + " was not found."));
 
 
         ServiceBooking booking = new ServiceBooking();
@@ -121,7 +121,7 @@ public class BookingService {
 
     private void ensureCustomerOwns(ServiceBooking booking, Long customerId) {
         if (!booking.getCustomer().getId().equals(customerId)) {
-            throw new NotFoundException("Training booking " + booking.getId() + " was not found for customer "
+            throw new NotFoundException("Service booking " + booking.getId() + " was not found for customer "
                     + customerId + ".");
         }
     }
@@ -134,6 +134,6 @@ public class BookingService {
     private ServiceBooking lockbooking(Long bookingId) {
         return bookingRepository.findByIdForUpdate(bookingId)
                 .orElseThrow(() -> new NotFoundException(
-                        "Training booking " + bookingId + " was not found."));
+                        "Service booking " + bookingId + " was not found."));
     }
 }

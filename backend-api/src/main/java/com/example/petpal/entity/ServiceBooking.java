@@ -18,6 +18,11 @@ public class ServiceBooking {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "pet_id", nullable = false)
+    private Pet pet;
+
     @NotBlank
     @Size(max = 30)
     @Column(nullable = false, length = 30)
@@ -60,6 +65,15 @@ public class ServiceBooking {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
+
 
     public ServiceEntity getServiceEntity() {
         return serviceEntity;
