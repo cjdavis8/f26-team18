@@ -38,6 +38,7 @@ public class CustomerUiController {
         Long customerId = UiSession.requireId(session, "customer");
         model.addAttribute("customer", customerService.getProfile(customerId));
         //model.addAttribute("bookings", bookingService.listForCustomer(customerId));
+        model.addAttribute("bookings", List.of());
         return "customer/dashboard";
     }
 
