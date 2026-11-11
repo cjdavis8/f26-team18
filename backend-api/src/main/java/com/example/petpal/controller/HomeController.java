@@ -60,7 +60,7 @@ public class HomeController {
         session.setAttribute("userId", customer.id());
         session.setAttribute("userRole", "customer");
         session.setAttribute("loggedInCustomer", customer);
-        return "redirect:/customers/dashboard";
+        return "redirect:/customer/dashboard";
     }
     /** 
     @GetMapping("/customer/dashboard")
