@@ -6,6 +6,7 @@ import com.example.petpal.repository.CustomerRepository;
 import com.example.petpal.repository.ProviderRepository;
 import com.example.petpal.repository.ReviewRepository;
 import com.example.petpal.service.*;
+import com.example.petpal.mvc.*;
 
 import com.example.petpal.entity.*;
 
@@ -48,7 +49,7 @@ public class HomeController {
     public String showCustomerRegister() {
         return "customer/register";
     }
-
+    /** 
     @GetMapping("/customer/dashboard")
     public String showCustomerDashboard(HttpSession session, Model model) {
     Customer customer = (Customer) session.getAttribute("loggedInCustomer");
@@ -60,8 +61,9 @@ public class HomeController {
     model.addAttribute("customer", customer);
     model.addAttribute("isLoggedIn", true); // <--- Add this flag
     return "customer/dashboard";
-
 }
+    */
+
 
     @GetMapping("/provider/register")
     public String showProviderRegister() {
