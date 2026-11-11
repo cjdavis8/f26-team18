@@ -10,7 +10,6 @@
         <div class = "black-box">
             <h2> Welcome, ${customer.name()}!</h2>
         </div>
-        <!--
 
         <h2>Upcoming Bookings</h2>
         <#list bookings as booking>
@@ -36,11 +35,11 @@
                             </div>
           </#if>
         </#list>
-                        -->
+                       
         <p style="font-size: xx-large; text-align: center; font-weight: bold;">Find Services</p>
 
 
-        <!-- BEGINNING OF AD BLOCKS-->
+        
         <div class = "ad-container">
             <div class="ad-block" onclick="location.href='browse-providers.html'">
                 <img src="https://i.imgur.com/BL3Dilp.png" alt="Petpal Walking Ad" class="ad-image-1">
@@ -60,6 +59,8 @@
                 <p> Help your pet learn new tricks and behaviors with our professional training services!</p>
             </div>
         </div>
+
+
 <!--/body-->
 <!-- END OF BODY -->
 

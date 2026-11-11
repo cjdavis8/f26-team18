@@ -33,7 +33,8 @@ public record BookingServiceResponse(
                 booking.getServiceEntity().getTitle(), booking.getServiceEntity().getPrice(),
                 booking.getServiceEntity().getProvider().getId(),
                 booking.getServiceEntity().getProvider().getName(),
-                booking.getTimeslot().getId(),
-                booking.getTimeslot().getStartTime(), booking.getTimeslot().getEndTime());
+                booking.getTimeslot() == null ? null : booking.getTimeslot().getId(),
+                booking.getTimeslot() == null ? null : booking.getTimeslot().getStartTime(), 
+                booking.getTimeslot() == null ? null : booking.getTimeslot().getEndTime());
     }
 }

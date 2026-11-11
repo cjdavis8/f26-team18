@@ -51,14 +51,8 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="breed">Breed*</label><br>
-                                <select id="breed" required>
-                                    <option value="">Select a breed...</option>
-                                    <option value="newfie">Newfoundland</option>
-                                    <option value="golden">Golden Retriever</option>
-                                    <option value="short">Domestic Short Hair</option>
-                                    <option value="long">Domestic Long Hair</option>
-                                </select>
+                                <label for="breed">Last Name</label><br>
+                                <input type="text" id="breed" placeholder="Newfoundland" required>
                             </div>
                             
                             <div class="form-group">
