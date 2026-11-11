@@ -10,18 +10,24 @@
     </section>
 
     <section class="section" style="padding: 1rem;">
-        <div class="container">
+        <div class="container" style="max-width: 800px; max-height:fit-content;">
         <div class="card" style="padding:1rem">
-
+            
             <form action="/customer/edit-details" method="post">
-                <label for="name">Full Name</label><input id="name" name="name" value="${customer.name()}" required
-                maxlength="100">
-                <label for="email">Email</label><input id="email" name="email" type="email" value="${customer.email()}"
-                required maxlength="254">
-
+                
+                <div class="mb-3">
+                    <label for="name">Full Name</label><input id="name" name="name" value="${customer.name()}" required
+                    maxlength="100">
+                </div>
+                <div class="mb-3">
+                    <label for="email">Email</label><input id="email" name="email" type="email" value="${customer.email()}"
+                    required maxlength="254">
+                </div>
                     <!-- Submit / cancel Buttons -->
-                <button class="btn btn-primary" type="submit">Save Changes</button>
-                <a class="btn btn-outline" href="/customers/profile">Cancel</a>
+                <div class="mb-3">
+                    <button class="btn btn-primary" type="submit">Save Changes</button>
+                    <a class="btn btn-outline" href="/customers/profile">Cancel</a>
+                </div>
 
             </form>
             </div>
