@@ -10,7 +10,7 @@
         <div class = "black-box">
             <h2> Welcome, ${customer.name()}!</h2>
         </div>
-
+        <!--
 
         <h2>Upcoming Bookings</h2>
         <#list bookings as booking>
@@ -36,6 +36,7 @@
                             </div>
           </#if>
         </#list>
+                        -->
         <p style="font-size: xx-large; text-align: center; font-weight: bold;">Find Services</p>
 
 
