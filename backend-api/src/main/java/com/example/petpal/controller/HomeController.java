@@ -29,7 +29,7 @@ public class HomeController {
 
     @Autowired
     private ProviderRepository ProviderRepository;
-    private CustomerRepository CustomerRepository;
+    private CustomerRepository customerRepository;
 
     @Autowired
     private ProviderService providerService;
@@ -118,7 +118,7 @@ public String loginCustomer(@RequestParam String email,
                             HttpSession session,
                             RedirectAttributes redirectAttributes) { // Switch Model to RedirectAttributes
 
-    Optional<Customer> customerOpt = CustomerRepository.findByEmail(email);
+    Optional<Customer> customerOpt = customerRepository.findByEmail(email);
 
     if (customerOpt.isPresent()) {
         Customer customer = customerOpt.get();
