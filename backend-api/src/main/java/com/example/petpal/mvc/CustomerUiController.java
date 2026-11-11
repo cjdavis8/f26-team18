@@ -58,7 +58,14 @@ public class CustomerUiController {
                 customerService.getProfile(UiSession.requireId(session, "customer")));
         return "customer/edit-details";
     }
-    
+
+    @PostMapping("/edit-details")
+    public String updateDetails(HttpSession session, @Valid CustomerUpdateRequest request) {
+        customerService.updateProfile(
+        UiSession.requireId(session, "customer"), request);
+        return "redirect:/customer/profile";
+}
+
 /** 
     @GetMapping("/pets/{petId}")
     public String petProfile(@PathVariable Long petId, Model model) {
