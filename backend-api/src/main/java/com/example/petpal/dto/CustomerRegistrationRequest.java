@@ -10,8 +10,7 @@ import java.util.List;
 public record CustomerRegistrationRequest (
     @NotBlank @Size(max = 100) String name,
     @NotBlank @Email @Size(max = 254) String email,
-    @NotBlank @Size(min = 8, max = 72) String password,
-    List<Pet> pets
+    @NotBlank @Size(min = 8, max = 72) String password
 ) {
     
 }

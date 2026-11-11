@@ -7,10 +7,12 @@ import com.example.petpal.repository.ProviderRepository;
 import com.example.petpal.repository.ReviewRepository;
 import com.example.petpal.service.*;
 import com.example.petpal.mvc.*;
-
+import com.example.petpal.dto.CustomerRegistrationRequest;
+import com.example.petpal.dto.CustomerResponse;
 import com.example.petpal.entity.*;
 
 import jakarta.servlet.http.HttpSession; // Use javax.servlet.http.HttpSession if on Spring Boot 2.x
+import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,7 +22,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.Optional;
 import java.util.List;
 
@@ -48,6 +52,15 @@ public class HomeController {
     @GetMapping("/customer/register")
     public String showCustomerRegister() {
         return "customer/register";
+    }
+
+    @PostMapping("/register")
+    public String createCustomer(@Valid CustomerRegistrationRequest request, HttpSession session) {
+        CustomerResponse customer = customerService.register(request);
+        session.setAttribute("userId", customer.id());
+        session.setAttribute("userRole", "customer");
+        session.setAttribute("loggedInCustomer", customer);
+        return "redirect:/customers/dashboard";
     }
     /** 
     @GetMapping("/customer/dashboard")

@@ -2,6 +2,7 @@ package com.example.petpal.service;
 
 import com.example.petpal.entity.Customer;
 import com.example.petpal.repository.CustomerRepository;
+import com.example.petpal.repository.PetRepository;
 import com.example.petpal.dto.*;
 
 import org.springframework.stereotype.Service;
@@ -61,4 +62,5 @@ public class CustomerService {
             throw new BadRequestException("Password must be no more than 72 UTF-8 bytes.");
         }
     }
+
 }

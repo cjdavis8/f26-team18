@@ -8,7 +8,7 @@
                     <h2 class="text-center mb-4" style="font-weight: 700; font-size: 1.8rem; margin-top: 1rem">Join PetPal</h2>
                     <p class="text-center text-muted mb-4">Create your customer profile and find your petcare solution</p>
 
-                    <form action="/register" method="post" id="customerForm" style="margin-left: 5rem; margin-right: 5rem">
+                    <form action="/customer/register" method="post" id="customerForm" style="margin-left: 5rem; margin-right: 5rem">
                         <!-- Personal Information -->
                         <h3>Personal Information</h3>
 
