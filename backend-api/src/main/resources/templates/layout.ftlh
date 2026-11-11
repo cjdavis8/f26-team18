@@ -35,7 +35,7 @@
                 <form action="/logout" method="POST" style="display: inline;">
                     <button type="submit" class="header-button" style="background-color: #d9534f; color: white;">Logout</button>
                 </form>
-            <#elseif Session["loggedInCustomer"]?? || (isLoggedIn!false)]>
+            <#elseif Session["loggedInCustomer"]?? || (isLoggedIn!false)>
                 <form action="/customer/dashboard" method="GET" style="display: inline;">
                     <button type="submit" class="header-button" style="background-color: #eee7e7; color: black;">Dashboard</button>
                 </form>
