@@ -41,7 +41,7 @@
               </div>
 
             </div>
-            <button class="btn btn-success" style="margin-top: 1rem;" onclick="window.location.href='/edit-details'">Edit Personal Info</button>
+            <button class="btn btn-success" style="margin-top: 1rem;" onclick="window.location.href='/customer/edit-details'">Edit Personal Info</button>
           </div>
         </div>
 
@@ -64,8 +64,13 @@
                         </div>
                     </div>
                 </div>
+            </#list>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button class="btn btn-success" onclick="window.location.href='/customer/add-pet'">Add Pet</button>
+                </div>
             </div>
-        </#list>
+        
+
 
         <!-- Account Settings Card -->
         <div class="card" style="margin-bottom: 2rem;">
