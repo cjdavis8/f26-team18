@@ -23,9 +23,9 @@
                                     </div>
                                 </div>
                                 <div class="session-details">
-                                    <div class="detail-item"><span class="detail-label"><b>Start Date &amp; Time:</b></span> ${booking.startTime()}</div>
-                                    <div class="detail-item"><span class="detail-label"><b>End Date &amp; Time:</b></span> ${booking.endTime()}</div>
-                                    <div class="detail-item"><span class="detail-label"><b>Price</b></span> ${booking.servicePrice()}</div>
+                                    <div class="detail-item"><span class="detail-label"><b>Start Date &amp; Time:</b></span> ${booking.startTime()!"Not Scheduled"}</div>
+                                    <div class="detail-item"><span class="detail-label"><b>End Date &amp; Time:</b></span> ${booking.endTime()!"Not Scheduled"}</div>
+                                    <div class="detail-item"><span class="detail-label"><b>Price</b></span> ${booking.servicePrice()!"Price Undefined"}</div>
                                 </div>
                                 <div style="display: flex; gap: 1rem; margin-top: 1rem;">
                                     <button class="btn btn-success" onclick="window.location.href='session-details.html'">View Details</button>
