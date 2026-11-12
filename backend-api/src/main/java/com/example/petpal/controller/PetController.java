@@ -28,7 +28,7 @@ public class PetController {
     }
 
     @PostMapping
-    public ResponseEntity<PetResponse> register(
+    public ResponseEntity<PetResponse> registerPet(
             @Valid @RequestBody PetRegistrationRequest request) {
         PetResponse pet = petService.register(customerService.findCustomer(request.customerId()), request);
         return ResponseEntity.created(URI.create("/api/pets/" + pet.id())).body(pet);
