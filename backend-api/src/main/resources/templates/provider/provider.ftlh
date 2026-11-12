@@ -179,7 +179,7 @@
               <span class="review-date text-muted small">Reviewed on ${review.reviewDate!''}</span>
             </#if>
 
-            <!-- Display Provider Replies if they exist -->
+            <!-- Display Provider Replies -->
             <#if review.replies?? && review.replies?has_content>
               <div class="mt-3 ps-3 border-start border-success bg-light p-2 rounded">
                 <#list review.replies as reply>

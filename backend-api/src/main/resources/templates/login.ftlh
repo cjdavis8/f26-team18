@@ -8,7 +8,7 @@
                     <h2 class="text-center mb-4" style="font-weight: 700; font-size: 1.8rem;">Welcome back to PetPal</h2>
                     <p class="text-center text-muted mb-4">Sign in to your account to manage your pet services</p>
 
-                    <!-- Error Message Display -->
+                    <!-- Error Display -->
                     <#if error??>
                         <div class="alert alert-danger" role="alert">
                             ${error}

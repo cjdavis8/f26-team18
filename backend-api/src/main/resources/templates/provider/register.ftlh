@@ -165,7 +165,7 @@ async function registerProvider() {
         return;
     }
 
-    // Build the servicesOffered map matching Map<String, Boolean>
+    // SERVICES OFFERED
     const servicesMap = {
         grooming: document.getElementById('serviceGrooming').checked,
         walking: document.getElementById('serviceWalking').checked,
@@ -174,7 +174,7 @@ async function registerProvider() {
         daycare: document.getElementById('serviceDaycare').checked
     };
 
-    // Build the provider data object matching Provider.java property names
+    // PROVIDER DATA AND NAMES
     const providerData = {
         firstName: document.getElementById('firstName').value,
         lastName: document.getElementById('lastName').value,

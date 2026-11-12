@@ -15,6 +15,5 @@ public interface ProviderRepository extends JpaRepository<Provider, Long> {
     // Find a provider by their email address
     Optional<Provider> findByEmail(String email);
 
-    // Useful for validation during profile creation/updates
     boolean existsByEmail(String email);
 }

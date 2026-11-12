@@ -32,9 +32,11 @@
         </div>
         <div class="header-right">
             <#if Session["loggedInProvider"]?? || (isLoggedIn!false)>
+                <a href="/provider/dashboard"><button class="heaer-button">Dashboard</button></a>
                 <form action="/logout" method="POST" style="display: inline;">
                     <button type="submit" class="header-button" style="background-color: #d9534f; color: white;">Logout</button>
                 </form>
+                
             <#else>
                 <a href="/login"><button class="header-button">Login</button></a>
                 <a href="/customer/register"><button class="header-button">Register</button></a>
@@ -42,7 +44,6 @@
         </div>
     </header>
 
-    <!-- UNIQUE PAGE CONTENT GOES HERE -->
     <main>
         <#nested>
     </main>

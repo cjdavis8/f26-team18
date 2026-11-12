@@ -198,7 +198,7 @@
             return;
         }
 
-        // Convert specialties textarea lines into List<String>
+        // Specialties becomes List
         const specialtiesText = document.getElementById('specialties').value;
         const specialtiesList = specialtiesText ? specialtiesText.split('\n').filter(s => s.trim() !== '') : [];
 

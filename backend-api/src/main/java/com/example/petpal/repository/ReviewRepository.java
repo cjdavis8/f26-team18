@@ -18,6 +18,6 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
     @Query("SELECT r FROM Review r LEFT JOIN FETCH r.replies WHERE r.provider.id = :providerId")
     List<Review> findByProviderIdWithReplies(@Param("providerId") Long providerId);
 
-    // Look up reviews by customer ID (note the underscore: Customer_Id)
+    // Look up reviews by customer ID
     List<Review> findAllByCustomerIdOrderByReviewDateDescIdDesc(Long customerId);
 }
