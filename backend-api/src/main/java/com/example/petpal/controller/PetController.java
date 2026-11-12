@@ -12,7 +12,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/customers")
+@RequestMapping("/api/pets")
 public class PetController {
     private final PetService petService;
     private final CustomerService customerService;
@@ -28,7 +28,7 @@ public class PetController {
     }
 
     @PostMapping
-    public ResponseEntity<PetResponse> registerPet(
+    public ResponseEntity<PetResponse> register(
             @Valid @RequestBody PetRegistrationRequest request) {
         PetResponse pet = petService.register(customerService.findCustomer(request.customerId()), request);
         return ResponseEntity.created(URI.create("/api/pets/" + pet.id())).body(pet);
