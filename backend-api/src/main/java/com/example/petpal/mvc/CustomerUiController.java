@@ -67,7 +67,9 @@ public class CustomerUiController {
     }
 
     @GetMapping("/add-pet")
-    public String showAddPetForm() {
+    public String showAddPetForm(HttpSession session, Model model) {
+        Long customerId = UiSession.requireId(session, "customer");
+        model.addAttribute("customer", customerService.getProfile(customerId));
         return "customer/add-pet";
     }
 
