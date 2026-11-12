@@ -54,12 +54,11 @@
                 </div>
             
             <div class="row">
-            <!-- Submit Button -->
-                    <button type="button" class="btn btn-success btn-large" onclick="confirmChanges()" style="width: 100%; margin-top: 1rem; text-align: center; padding: 0.75rem 1rem;">
-                    Confirm Changes
-                    </button>
-            <button class="btn btn-danger" onclick="alert('Delete pet - pet will be deleted')" style="width: 100%; margin-top: 1rem; text-align: center; padding: 0.75rem 1rem; color: white; border-color: var(--danger-color);">Delete
-              Pet</button>
+                <!-- Submit / cancel Buttons -->
+                <div class="mb-3">
+                    <button class="btn btn-primary" type="submit">Submit Pet</button>
+                    <a class="btn btn-outline" href="/customers/profile">Cancel</a>
+                </div>
           </div>
           </div>
         </div>
