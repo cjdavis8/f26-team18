@@ -20,17 +20,17 @@ import java.util.Optional;
 public class CustomerUiController {
 
     private final CustomerService customerService;
-    //private final PetService petService;
+    private final PetService petService;
     private final BookingService bookingService;
     private final CustomerRepository customerRepository;
 
     public CustomerUiController(
             CustomerService customerService,
-            //PetService petService,
+            PetService petService,
             BookingService bookingService,
             CustomerRepository customerRepository) {
         this.customerService = customerService;
-        //this.petService = petService;
+        this.petService = petService;
         this.bookingService = bookingService;
         this.customerRepository = customerRepository;
     }
@@ -64,7 +64,14 @@ public class CustomerUiController {
         customerService.updateProfile(
         UiSession.requireId(session, "customer"), request);
         return "redirect:/customer/profile";
-}
+    }
+
+    @PostMapping("/add-pet")
+    public String addPet(HttpSession session, @Valid PetRegistrationRequest request, @SessionAttribute("loggedInCustomer") Customer customer) {
+        petService.register(customer, request);
+        return "redirect:/customer/profile";
+    }
+
 
 /** 
     @GetMapping("/pets/{petId}")

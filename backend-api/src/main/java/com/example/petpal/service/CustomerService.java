@@ -46,7 +46,8 @@ public class CustomerService {
         return CustomerResponse.from(customerRepository.save(customer));
     }
 
-    private Customer findCustomer(Long customerId) {
+
+    public Customer findCustomer(Long customerId) {
         return customerRepository.findById(customerId)
                 .orElseThrow(() -> new NotFoundException("Customer " + customerId + " was not found."));
     }

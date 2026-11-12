@@ -79,6 +79,10 @@ public class Customer {
         return pets;
     }
 
+    public void AddPet(Pet pet) {
+        this.pets.addLast(pet);
+    }
+
     public List<ServiceBooking> getBookings() {
         return serviceBookings;
     }

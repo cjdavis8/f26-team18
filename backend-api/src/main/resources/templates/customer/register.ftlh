@@ -30,33 +30,32 @@
 
                         <!-- Pet Information -->
                         <h3>Pet Information</h3>
-                        
-                        <div id="container">
-                            <div class="form-group">
-                                <label for="petName">Pet's Name</label><br>
-                                <input type="text" id="petName" placeholder="Tachanka" required>
-                            </div>
-                            
-                            
-                            <div class="form-group">
-                                <label for="breed">Pet's Breed</label><br>
-                                <input type="text" id="breed" placeholder="Newfoundland" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="age">Age</label><br>
-                                <input type="text" id="age" placeholder="7" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="weight">Weight</label><br>
-                                <input type="text" id="weight" placeholder="150" required>
-                            </div>
+                            <div id="container">
+                                <div class="form-group">
+                                    <label for="petName">Pet's Name</label><br>
+                                    <input type="text" id="petName" name="petName" placeholder="Tachanka" required>
+                                </div>
+                                
+                                
+                                <div class="form-group">
+                                    <label for="breed">Pet's Breed</label><br>
+                                    <input type="text" id="breed" name = "breed" placeholder="Newfoundland" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="age">Age</label><br>
+                                    <input type="text" id="age" name="age" placeholder="7" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="weight">Weight</label><br>
+                                    <input type="text" id="weight" name="weight" placeholder="150" required>
+                                </div>
 
-                            <div class="form-group">
-                                <button type="button" class="btn btn-secondary btn-sm" style="margin-top: 1rem">Add Another Pet</button>
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-secondary btn-sm" style="margin-top: 1rem">Add Another Pet</button>
+                                </div>
                             </div>
-                        </div>
 
                         <!-- Terms -->
                         <div class="form-group" style="margin-top: 1.5rem;">
