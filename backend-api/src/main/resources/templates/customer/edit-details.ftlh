@@ -26,7 +26,7 @@
                     <!-- Submit / cancel Buttons -->
                 <div class="mb-3">
                     <button class="btn btn-primary" type="submit">Save Changes</button>
-                    <a class="btn btn-outline" href="/customers/profile">Cancel</a>
+                    <a class="btn btn-outline" href="/customer/profile">Cancel</a>
                 </div>
 
             </form>

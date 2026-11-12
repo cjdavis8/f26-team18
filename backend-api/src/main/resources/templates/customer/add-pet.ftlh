@@ -49,16 +49,17 @@
                         <label for="weight">Weight</label><br>
                         <input type="text" id="weight" name="weight" placeholder="150" required="">
                     </div>
+
+                    <div class="row">
+                        <!-- Submit / cancel Buttons -->
+                        <div class="mb-3">
+                            <button class="btn btn-primary" type="submit">Submit Pet</button>
+                            <a class="btn btn-outline" href="/customer/profile">Cancel</a>
+                        </div>
                     </form>
                 </div>
                 </div>
             
-            <div class="row">
-                <!-- Submit / cancel Buttons -->
-                <div class="mb-3">
-                    <button class="btn btn-primary" type="submit">Submit Pet</button>
-                    <a class="btn btn-outline" href="/customers/profile">Cancel</a>
-                </div>
           </div>
           </div>
         </div>
