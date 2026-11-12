@@ -66,7 +66,7 @@ public class CustomerUiController {
         return "redirect:/customer/profile";
     }
 
-    @GetMapping("/customer/add-pet")
+    @GetMapping("/add-pet")
     public String showAddPetForm() {
         return "customer/add-pet";
     }
