@@ -1,3 +1,7 @@
+    <#import "../layout.ftlh" as l>
+
+<@l.layout title="PetPal - Customer Dashboard">
+    
     <section>
       <div class="container">
         <h1 style="font-size: 2rem; font-weight: 700;">Add Pet Information</h1>
@@ -70,3 +74,5 @@
         </div>
         </div>
     </section>
+
+    </@l.layout>
