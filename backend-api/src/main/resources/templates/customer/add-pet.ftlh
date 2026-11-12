@@ -29,7 +29,7 @@
               <div class = "col-sm">
                 <div class="card" style="padding:2rem;">
                     <form action="/customer/add-pet" method="post">
-
+                    <input type="hidden" name="customerId" value=${customer.id()}>
                     <div class="form-group">
                         <label for="name">Pet's Name</label><br>
                         <input type="text" id="name" name="name" placeholder="Tachanka" required="">
