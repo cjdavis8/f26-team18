@@ -66,6 +66,11 @@ public class CustomerUiController {
         return "redirect:/customer/profile";
     }
 
+    @GetMapping("/customer/add-pet")
+    public String showAddPetForm() {
+        return "customer/add-pet";
+    }
+
     @PostMapping("/add-pet")
     public String addPet(HttpSession session, @Valid PetRegistrationRequest request, @SessionAttribute("loggedInCustomer") Customer customer) {
         petService.register(customer, request);
